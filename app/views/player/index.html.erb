@@ -1,1 +1,6 @@
-<h1> Just trying to do as show in tutorial</h1>
+<% @players.each do |p| %>
+ <h1><%= p.name %></h1>
+ <h2><%= p.age %></h2>
+ <h3><%= p.nationality %></h3>
+ <h4><%= p.wiki %></h4>
+<% end %>
