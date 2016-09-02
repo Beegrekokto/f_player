@@ -1,18 +1,26 @@
 .navbar-default .navbar-brand{
 	font-family: 'Orbitron', sans-serif;
 	font-size: 30px;
-	color: red !important;
+  color: white;
 }
 
 .navbar-default{
 	font-weight: 100px;
-	color: white;
-	background: blue !important;
+	background: #333;
 }
 html,
 body {
   height: 100%;
-  /* The html and body elements cannot have any padding or margin. */
+  font-family: 'Orbitron', sans-serif;
+}
+
+html {
+  background: url("http://hdwplan.com/wp-content/uploads/2016/08/red-background-soccer-wallpaper.jpg")  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-cover: 100%;
 }
 
 /* Wrapper for page content to push down footer */
@@ -26,7 +34,35 @@ body {
 }
 
 /* Set the fixed height of the footer here */
-#footer {
+.footer {
   height: 120px;
-  background-color: blue !important;
+  background-color: #333;
+  color: white;
+}
+
+.add-player-btn {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 30px;
+  background-color: #333;
+  border-color: #333;
+}
+
+.panel-default > .panel-heading {
+    color: white;
+    background-color: rgba(0,0,0,0.5);
+    border-color: #333;
+}
+
+.panel  {
+  background-color: transparent;
+}
+
+.panel-body {
+  background: rgba(255,255,255,0.8);
+}
+
+.panel-heading-wiki {
+  background-color: whitesmoke !important;
+  color: #333 !important;
 }

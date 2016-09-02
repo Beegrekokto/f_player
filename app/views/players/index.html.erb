@@ -1,5 +1,5 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+<button type="button" class="btn btn-info btn-lg add-player-btn" data-toggle="modal" data-target="#myModal">
   Add Player
 </button>
 
@@ -14,10 +14,10 @@
       <div class="modal-body">
 
       <%= simple_form_for Player.new do |p| %>
-      <%= p.input :name %>
-      <%= p.input :age %>
-      <%= p.input :nationality %>
-      <%= p.input :wiki %>
+        <%= p.input :name %>
+        <%= p.input :age %>
+        <%= p.input :nationality %>
+        <%= p.input :wiki %>
       
       </div>
       <div class="modal-footer">
@@ -32,29 +32,47 @@
 
 
 
+<div class="row">
+  <% @players.each_with_index do |p, i| %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h1 class="panel-title">Player <%= @all_player_ids.index(p.id) + 1 %>  <h2><%= p.name %></h2></h1>
+        </div>
+        <div class="panel-body">
+        
+          <blockquote>
+           
+           <h3>Age: <%= p.age %></h3>
+           <h3>Nationality: <%= p.nationality %></h3>
 
- <% @players.each_with_index do |p, i| %>
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h1 class="panel-title">Player <%=i + 1 %>  <h2><%= p.name %></h2></h1>
-  </div>
-  <div class="panel-body">
-  
-<blockquote>
- 
- <h3><%= p.age %></h3>
- <h4><%= p.nationality %></h4>
- <h5><%= p.wiki %></h5>
- </blockquote>
- <br>
- <%= link_to 'Delete', player_path(p), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "Are you sure?"} %>
- <%= link_to 'Edit', edit_player_path(p), class: 'btn btn-sm btn-success' %>
+            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+              <div class="panel panel-default">
+                <div class="panel-heading panel-heading-wiki" role="tab" id="headingOne">
+                  <h4 class="panel-title">
+                    <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse_<%= i %>" aria-expanded="false" aria-controls="collapse_<%= i %>">
+                      Wiki
+                    </a>
+                  </h4>
+                </div>
+                <div id="collapse_<%= i %>" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                  <div class="panel-body">
+                    <%= p.wiki %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </blockquote>
 
+          <br>
+          <%= link_to 'Delete', player_path(p), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "Are you sure?"} %>
+          <%= link_to 'Edit', edit_player_path(p), class: 'btn btn-sm btn-success' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
 
-
-  </div>
 </div>
-<% end %>
 <%= will_paginate @players %>
 
 
