@@ -1,8 +1,8 @@
 <h1> Edit Information </h1>
 <%= simple_form_for @player, method: :patch do |p| %>
-	<%= p.name %>
-	<%= p.age %>
-	<%= p.nationality %>
-	<%= p.wiki %>
+	<%= p.input :name %>
+	<%= p.input :age %>
+	<%= p.input :nationality %>
+	<%= p.input :wiki %>
 	<%= p.submit 'submit', class: 'btn btn-primary' %>
 	<% end %>

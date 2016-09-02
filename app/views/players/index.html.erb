@@ -19,8 +19,6 @@
       <%= p.input :nationality %>
       <%= p.input :wiki %>
       
-     
-        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -35,30 +33,30 @@
 
 
 
-
-
-
-
-
-
-
  <% @players.each_with_index do |p, i| %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title">Player <%=i + 1 %></h3>
+    <h1 class="panel-title">Player <%=i + 1 %>  <h2><%= p.name %></h2></h1>
   </div>
   <div class="panel-body">
   
+<blockquote>
+ 
+ <h3><%= p.age %></h3>
+ <h4><%= p.nationality %></h4>
+ <h5><%= p.wiki %></h5>
+ </blockquote>
+ <br>
+ <%= link_to 'Delete', player_path(p), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "Are you sure?"} %>
+ <%= link_to 'Edit', edit_player_path(p), class: 'btn btn-sm btn-success' %>
 
- <h1><%= p.name %></h1>
- <h2><%= p.age %></h2>
- <h3><%= p.nationality %></h3>
- <h4><%= p.wiki %></h4>
 
 
   </div>
 </div>
 <% end %>
+<%= will_paginate @players %>
+
 
 
 

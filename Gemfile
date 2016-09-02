@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'will_paginate'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

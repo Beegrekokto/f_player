@@ -1,0 +1,22 @@
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1 class="panel-title"> <h2><%= @player.name %></h2></h1>
+  </div>
+  <div class="panel-body">
+  
+<blockquote>
+ 
+ <h3><%= @player.age %></h3>
+ <h4><%= @player.nationality %></h4>
+ <h5><%= @player.wiki %></h5>
+ </blockquote>
+ <br>
+ <div class="btn-group" role="group">
+ <%= link_to 'Delete', player_path(@player), method: :delete, class: 'btn btn-sm btn-danger', data:{confirm: "Are you sure?"} %>
+ <%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-sm btn-success' %>
+
+
+
+  </div>
+</div>

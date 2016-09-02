@@ -6,6 +6,9 @@ Rails.application.routes.draw do
    root 'players#index'
    resources :players
 
+   get 'about' => 'static_pages#about'
+   get 'random' => 'static_pages#random'
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
