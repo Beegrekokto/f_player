@@ -10,8 +10,8 @@ default: &default
   timeout: 5000
   host: localhost
   
-  username: postgresql
-  password: password
+  username: postgres
+  password: rootedphone12345
 
 development:
   <<: *default

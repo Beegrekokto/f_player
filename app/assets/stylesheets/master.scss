@@ -31,6 +31,7 @@ html {
   margin: 0 auto -120px;
   /* Pad bottom by footer height */
   padding: 0 0 120px;
+  background: url("http://hdfreewallpaper.net/wp-content/uploads/2016/03/new-soccer-wallpaper.jpg");
 }
 
 /* Set the fixed height of the footer here */
@@ -38,6 +39,8 @@ html {
   height: 120px;
   background-color: #333;
   color: white;
+  opacity:0.8;
+
 }
 
 .add-player-btn {
@@ -65,4 +68,11 @@ html {
 .panel-heading-wiki {
   background-color: whitesmoke !important;
   color: #333 !important;
+}
+
+.robot{
+  font-size: 50px;
+}
+.robot2{
+  font-size: 25px;
 }
